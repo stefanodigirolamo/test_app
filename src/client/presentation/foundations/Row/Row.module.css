@@ -1,0 +1,14 @@
+@media (min-width: 1024px) {
+  .narrow {
+    --margin: 40px;
+    --margins: calc(var(--margin) * 2);
+    --remaining: calc(100% - var(--margins));
+    width: calc(var(--remaining) / 12 + var(--margin));
+  }
+}
+
+@media (min-width: 1600px) {
+  .narrow {
+    --margin: 104px;
+  }
+}
