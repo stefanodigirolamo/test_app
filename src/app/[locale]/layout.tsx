@@ -4,10 +4,10 @@ import '../globals.css';
 import cx from 'classnames';
 import { dir } from 'i18next';
 import i18nConfig from '../../../i18nConfig';
-import { Space } from '@/client/presentation/foundations/Space/Space';
-import { Header } from '@/client/presentation/blocks/Header/Header';
-import { Footer } from '@/client/presentation/blocks/Footer/Footer';
-import { spaceUnit } from '@/client/presentation/foundations/utils';
+import { Space } from '@/presentation/foundations/Space';
+import { Header } from '@/presentation/blocks';
+import { Footer } from '@/presentation/blocks';
+import { spaceUnit } from '@/presentation/foundations/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 
