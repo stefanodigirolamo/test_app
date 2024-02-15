@@ -1,11 +1,9 @@
 'use client';
 
 import React, { useMemo } from 'react';
-import cx from 'classnames';
 import { useRouter } from 'next/navigation';
 import { useResponsive } from '@/hooks/useResponsive';
 import { Box, Row, Grid } from '@/presentation/foundations';
-import { Divider } from '@/presentation/components';
 import { spaceUnit } from '@/presentation/foundations/utils';
 import Image from 'next/image';
 
@@ -32,20 +30,10 @@ export function ProductsList(props: ProductsListProps) {
 
   return (
     <Box grow column>
-      <Divider
-        direction="horizontal"
-        style={props.color ? { backgroundColor: props.color } : undefined}
-        className={cx({ 'bg-neutral-600': !props.color })}
-      />
-      <Row
-        variant="full"
-        className="py-8"
-        hAlignContent="center"
-        data-test-id={props['data-test-id']}
-      >
+      <Row variant="full" className="py-8" hAlignContent="center" data-test-id={props['data-test-id']}>
         <Grid.Container {...gridResponsive} colsGap={spaceUnit * 4} rowsGap={spaceUnit * 4}>
           {props.list.map((item, index) => (
-            <Grid.Item key={index} alignSelf='center'>
+            <Grid.Item key={index} alignSelf="center">
               <Box onClick={() => router.push(`/pdp/${item.title.replaceAll(' ', '-')}`)} width={300} height={300}>
                 <Image src={item.url} alt="not found" width={300} height={300} priority />
               </Box>
