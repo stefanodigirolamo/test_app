@@ -5,6 +5,7 @@ import { Space } from '@/presentation/foundations/Space';
 import { Button } from '@/presentation/components/Button';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { Heading } from '@/presentation/foundations/Typography';
 
 export function Hp() {
   const router = useRouter();
@@ -12,7 +13,7 @@ export function Hp() {
 
   return (
     <Row variant="default" column className="flex" vAlignContent="top">
-      <h1 className="fill-neutral-off-white">{t('home.title')}</h1>
+      <Heading size="xl">{t('home.title')}</Heading>
       <Space size={10} />
       <Button
         id={'cta'}
@@ -22,7 +23,7 @@ export function Hp() {
         action={() => router.push('/plp')}
         className="w-fit sm:w-60 uppercase"
       >
-        <h1>go to plp</h1>
+        Go to plp
       </Button>
     </Row>
   );

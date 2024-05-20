@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, cloneElement, MouseEventHandler } from 'react';
 import cx from 'classnames';
 import * as classes from './Button.css';
 import { Box } from '@/presentation/foundations';
+import { IconProps } from '../Icons';
 
 export type ButtonProps = {
   'data-test-id'?: string;
@@ -16,7 +17,7 @@ export type ButtonProps = {
    * @type string | JSX.Element;
    * @required
    */
-  children: JSX.Element;
+  children: string | JSX.Element;
   /**
    * The type of the button.
    * @default 'button'
@@ -43,6 +44,16 @@ export type ButtonProps = {
    * @type boolean
    */
   disabled?: boolean;
+  /**
+   * optional before icon.
+   * @type (props: IconProps) => JSX.Element;
+   */
+  beforeIcon?: (props: IconProps) => JSX.Element;
+  /**
+   * optional after icon.
+   * @type (props: IconProps) => JSX.Element;
+   */
+  afterIcon?: (props: IconProps) => JSX.Element;
   /**
    * The action of the button.
    * @type MouseEventHandler<HTMLButtonElement>
@@ -106,10 +117,14 @@ export function Button(props: ButtonProps) {
       grow={props.fullWidth}
       shrink
     >
-      {cloneElement(props.children, {
-        id: 'button-icon-' + props.id,
-        className: cx(classes.iconColor[props.variant], props.children.props.className),
-      })}
+      {typeof props.children === 'string' ? (
+        <h1>{props.children}</h1>
+      ) : (
+        cloneElement(props.children, {
+          id: 'button-icon-' + props.id,
+          className: cx(classes.iconColor[props.variant], props.children.props.className),
+        })
+      )}
     </Box>
   );
 }

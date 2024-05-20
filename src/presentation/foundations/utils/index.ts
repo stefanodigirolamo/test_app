@@ -1,3 +1,5 @@
+import localFont from 'next/font/local';
+
 export type Children = React.ReactElement<unknown> | Array<Children> | boolean | null | undefined;
 
 export type Override<O1, O2> = Pick<O1, Exclude<keyof O1, keyof O2>> & O2;
@@ -13,3 +15,29 @@ export const logger = {
 };
 
 export const spaceUnit = 8;
+
+export type Filter<T, U> = T extends U ? T : never;
+
+export const fuerte = localFont({
+  display: 'swap',
+  style: 'normal',
+  variable: '--font-fuerte',
+  src: [
+    {
+      path: '../../../../public/fonts/Fuerte-RegularRounded.woff2',
+      weight: '400',
+    },
+    {
+      path: '../../../../public/fonts/Fuerte-RegularRounded.woff',
+      weight: '400',
+    },
+    {
+      path: '../../../../public/fonts/Fuerte-BoldRounded.woff2',
+      weight: '700',
+    },
+    {
+      path: '../../../../public/fonts/Fuerte-BoldRounded.woff',
+      weight: '700',
+    },
+  ],
+});

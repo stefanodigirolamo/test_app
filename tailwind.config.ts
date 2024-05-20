@@ -79,33 +79,8 @@ const theme = {
   },
   fontFamily: {
     fuerte: ['var(--font-fuerte)', ...fontFamily.sans],
-    mosans: ['var(--font-mosans)', ...fontFamily.sans],
   },
   fontSize: {
-    'hero-desktop': [
-      '140px',
-      {
-        lineHeight: '1.1',
-        letterSpacing: '-0.04em',
-        fontWeight: '900',
-      },
-    ],
-    'hero-ipad': [
-      '80px',
-      {
-        lineHeight: '1.1',
-        letterSpacing: '-0.04em',
-        fontWeight: '900',
-      },
-    ],
-    'hero-mobile': [
-      '56px',
-      {
-        lineHeight: '1.1',
-        letterSpacing: '-0.04em',
-        fontWeight: '900',
-      },
-    ],
     'heading-xl-desktop': [
       '64px',
       {
@@ -200,62 +175,6 @@ const theme = {
         fontWeight: '900',
       },
     ],
-    'heading-mono-l-desktop': [
-      '28px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '900',
-      },
-    ],
-    'heading-mono-l-mobile': [
-      '28px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '900',
-      },
-    ],
-    'heading-mono-s-desktop': [
-      '16px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '900',
-      },
-    ],
-    'heading-mono-s-mobile': [
-      '14px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '900',
-      },
-    ],
-    'body-highlight-l-desktop': [
-      '32px',
-      {
-        lineHeight: '1.1',
-        fontWeight: '900',
-      },
-    ],
-    'body-highlight-l-mobile': [
-      '28px',
-      {
-        lineHeight: '1.1',
-        fontWeight: '900',
-      },
-    ],
-    'body-highlight-l-mono-desktop': [
-      '32px',
-      {
-        lineHeight: '1.1',
-        fontWeight: '400',
-      },
-    ],
-    'body-highlight-l-mono-mobile': [
-      '22px',
-      {
-        lineHeight: '1.1',
-        fontWeight: '400',
-      },
-    ],
     'body-m-desktop': [
       '18px',
       {
@@ -302,77 +221,6 @@ const theme = {
       '12px',
       {
         lineHeight: '1.4',
-      },
-    ],
-    'caption-xl-desktop': [
-      '64px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '400',
-      },
-    ],
-    'caption-xl-mobile': [
-      '34px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '400',
-      },
-    ],
-    'caption-l-desktop': [
-      '48px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '400',
-      },
-    ],
-    'caption-l-mobile': [
-      '34px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '400',
-      },
-    ],
-    'label-s-desktop': [
-      '16px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '700',
-      },
-    ],
-    'label-s-mobile': [
-      '16px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '700',
-      },
-    ],
-    'label-xs-desktop': [
-      '14px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '700',
-      },
-    ],
-    'label-xs-mobile': [
-      '14px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '700',
-      },
-    ],
-
-    'label-xxs-desktop': [
-      '12px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '700',
-      },
-    ],
-    'label-xxs-mobile': [
-      '12px',
-      {
-        lineHeight: '1.4',
-        fontWeight: '700',
       },
     ],
     'button-m-desktop': [

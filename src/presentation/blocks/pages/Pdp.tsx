@@ -5,6 +5,7 @@ import { Space } from '@/presentation/foundations/Space';
 import { Button } from '@/presentation/components/Button';
 import { useRouter, useParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { Heading } from '@/presentation/foundations/Typography';
 
 export function Pdp() {
   const router = useRouter();
@@ -13,7 +14,7 @@ export function Pdp() {
 
   return (
     <Row variant="default" column className="flex" vAlignContent="top">
-      <h1 className="fill-neutral-off-white">{t('pdp.title') + ` ==> ${params.pdp[1]}`}</h1>
+      <Heading size="s">{t('pdp.title') + ` ==> ${params.pdp[1]}`}</Heading>
       <Space size={10} />
       <Button
         id={'cta'}
