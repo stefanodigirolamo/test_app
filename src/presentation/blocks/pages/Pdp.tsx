@@ -19,7 +19,7 @@ export function Pdp() {
       <Button
         id={'cta'}
         data-test-id={'cta'}
-        variant="secondary-inverted"
+        variant="secondary"
         size="m"
         action={() => router.back()}
         className="w-fit sm:w-60 uppercase"

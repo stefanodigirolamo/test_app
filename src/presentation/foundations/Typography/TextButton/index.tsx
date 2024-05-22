@@ -1,10 +1,10 @@
 import cx from 'classnames';
 import { AriaRole, ComponentProps } from 'react';
-import { BaseTypography } from './BaseTypography';
-import * as classes from './TextLink.css';
-import { Filter } from '../utils';
+import { Typography } from '../Typography';
+import * as classes from './TextButton.css';
+import { Filter } from '../../utils';
 
-export interface TextLinkProps {
+export interface TextButtonProps {
   'data-test-id'?: string;
   /**
    * The text content of the Body.
@@ -14,9 +14,9 @@ export interface TextLinkProps {
   children: string;
   /**
    * The color of the Body.
-   * @type ComponentProps<typeof BaseTypography>['color'];
+   * @type ComponentProps<typeof Typography>['color'];
    */
-  color?: ComponentProps<typeof BaseTypography>['color'];
+  color?: ComponentProps<typeof Typography>['color'];
   /**
    * The custom className.
    * @type string
@@ -24,41 +24,35 @@ export interface TextLinkProps {
   className?: string;
   /**
    * The font size of the TextLink.
-   * @type  "xs" | "s" | "m"
+   * @type "m" | "s";
+   * @default "m"
    * @required
    */
-  size: 'xs' | 's' | 'm';
+  size: 'm' | 's';
   /**
    * The component type.
    * @type 'span' | 'p' | 'label'
    * @default "span"
    */
-  component?: keyof Pick<JSX.IntrinsicElements, 'span' | 'p' | 'a'>;
+  component?: keyof Pick<JSX.IntrinsicElements, 'span' | 'p'>;
   /**
    * The TextLink role
    * @type 'link' | 'none'
    * @default "none"
    */
-  role?: Filter<AriaRole, 'link' | 'none'>;
-  /**
-   * The title of the TextLink.
-   * @type string
-   * @optional
-   */
-  title?: string;
+  role?: Filter<AriaRole, 'link' | 'presentation' | 'none'>;
 }
 
-export function TextLink(props: TextLinkProps) {
+export function TextButton(props: TextButtonProps) {
   return (
-    <BaseTypography
-      role={props.role ?? 'link'}
+    <Typography
+      role={props.role ?? 'presentation'}
+      component={props.component ?? 'span'}
       className={cx(classes.base, classes.size[props.size], props.className)}
       data-test-id={props['data-test-id']}
-      component={props.component ?? 'span'}
       color={props.color}
-      title={props.title}
     >
       {props.children}
-    </BaseTypography>
+    </Typography>
   );
 }

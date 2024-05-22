@@ -18,7 +18,7 @@ export function Hp() {
       <Button
         id={'cta'}
         data-test-id={'cta'}
-        variant="secondary-inverted"
+        variant="secondary"
         size="m"
         action={() => router.push('/plp')}
         className="w-fit sm:w-60 uppercase"

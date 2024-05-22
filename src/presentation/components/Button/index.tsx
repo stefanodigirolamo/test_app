@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, cloneElement, MouseEventHandler } from 'react';
 import cx from 'classnames';
 import * as classes from './Button.css';
-import { Box } from '@/presentation/foundations';
+import { Box, Space, spaceUnit } from '@/presentation/foundations';
 import { IconProps } from '../Icons';
 
 export type ButtonProps = {
@@ -89,6 +89,17 @@ export type ButtonProps = {
 };
 
 export function Button(props: ButtonProps) {
+  function convertIconSize(size: ButtonProps['size']) {
+    switch (size) {
+      case 'm':
+        return 's';
+      case 'l':
+        return 'm';
+      default:
+        return 's';
+    }
+  }
+
   return (
     <Box
       data-test-id={props['data-test-id']}
@@ -117,13 +128,34 @@ export function Button(props: ButtonProps) {
       grow={props.fullWidth}
       shrink
     >
+      {!!props.beforeIcon && (
+        <>
+          {props.beforeIcon({
+            id: 'before-icon-' + props.id,
+            size: convertIconSize(props.size),
+            fill: classes.iconColor[props.variant],
+          })}
+          <Space size={spaceUnit} />
+        </>
+      )}
       {typeof props.children === 'string' ? (
         <h1>{props.children}</h1>
       ) : (
         cloneElement(props.children, {
           id: 'button-icon-' + props.id,
           className: cx(classes.iconColor[props.variant], props.children.props.className),
+          fill: classes.iconColor[props.variant],
         })
+      )}
+      {!!props.afterIcon && (
+        <>
+          <Space size={spaceUnit} />
+          {props.afterIcon({
+            id: 'after-icon-' + props.id,
+            size: convertIconSize(props.size),
+            fill: classes.iconColor[props.variant],
+          })}
+        </>
       )}
     </Box>
   );

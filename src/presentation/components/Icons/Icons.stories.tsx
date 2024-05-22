@@ -4,16 +4,15 @@ import { IconPackage } from './IconPackage';
 import { DesignLibraryVersion } from '@/utils/constants';
 
 export default {
-  title: 'Components/Icons',
+  title: 'Components/Icon',
   component: Icon,
   parameters: {
-    layout: 'fullscreen',
     viewport: {
       defaultViewport: 'reset',
     },
     docs: {
       description: {
-        component: `Component based on <strong>Test App - Design Library [${DesignLibraryVersion['v1.0.0']}]</strong>`,
+        component: `The <strong>Icon</strong> component based on <strong>Design Library [ ${DesignLibraryVersion['v1.0.0']} ]</strong>.`,
       },
     },
   },

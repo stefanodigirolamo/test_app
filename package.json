@@ -7,12 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:css": "postcss ./src/presentation/styles/tailwind-out.css",
-    "dev:css:watch": "postcss ./src/presentation/styles/tailwind-out.css --watch",
-    "storybook": "storybook dev -p 6006",
-    "prebuild:storybook": "npm run build:css",
-    "build:storybook": "storybook build -o ./docs",
-    "dev:storybook": "concurrently \"npm run dev:css:watch\"  \"npm run storybook\""
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.20.2",
