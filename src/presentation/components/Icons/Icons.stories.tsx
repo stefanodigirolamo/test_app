@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 import { Icon } from './Icon';
 import { IconPackage } from './IconPackage';
-import { DesignLibraryVersion } from '@/utils/constants';
+import { DesignLibraryVersion } from '@/utils';
 
 export default {
   title: 'Components/Icon',

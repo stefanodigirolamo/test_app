@@ -14,8 +14,6 @@ export const logger = {
   warn,
 };
 
-export const spaceUnit = 8;
-
 export type Filter<T, U> = T extends U ? T : never;
 
 export const fuerte = localFont({

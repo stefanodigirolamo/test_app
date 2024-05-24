@@ -4,7 +4,7 @@ import cx from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Box, Row } from '@/presentation/foundations';
-import { LanguageChanger } from '@/presentation/blocks';
+import { LanguageSelector } from '@/presentation/blocks';
 import { useResponsive } from '@/hooks/useResponsive';
 
 export type HeaderProps = {
@@ -32,7 +32,7 @@ function HeaderDefaultDesktop(props: HeaderProps) {
       data-test-id={props['data-test-id'] + '-desktop'}
       component="nav"
       hAlignContent="center"
-      className={cx('bg-brand-black px-1.5 sm:px-0 fixed')}
+      className={cx('bg-black px-1.5 sm:px-0 fixed')}
       width="100%"
     >
       <Row
@@ -51,7 +51,7 @@ function HeaderDefaultDesktop(props: HeaderProps) {
             priority
           />
         </Link>
-        <LanguageChanger />
+        <LanguageSelector />
       </Row>
     </Box>
   );
@@ -59,12 +59,7 @@ function HeaderDefaultDesktop(props: HeaderProps) {
 
 function HeaderDefaultMobile(props: HeaderProps) {
   return (
-    <Box
-      data-test-id={props['data-test-id'] + '-mobile'}
-      component="nav"
-      className={cx('bg-brand-black fixed')}
-      width="100%"
-    >
+    <Box data-test-id={props['data-test-id'] + '-mobile'} component="nav" className={cx('bg-white fixed')} width="100%">
       <Row
         variant="default"
         vAlignContent="center"
@@ -79,9 +74,9 @@ function HeaderDefaultMobile(props: HeaderProps) {
             width={120}
             height={25}
             priority
-          />{' '}
+          />
         </Link>
-        <LanguageChanger />
+        <LanguageSelector />
       </Row>
     </Box>
   );

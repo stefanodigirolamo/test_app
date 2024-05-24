@@ -13,13 +13,12 @@ export function Hp() {
 
   return (
     <Row variant="default" column className="flex" vAlignContent="top">
-      <Heading size="xl">{t('home.title')}</Heading>
+      <Heading size="xl" className='text-white'>{t('home.title')}</Heading>
       <Space size={10} />
       <Button
         id={'cta'}
         data-test-id={'cta'}
-        variant="secondary"
-        size="m"
+        size="l"
         action={() => router.push('/plp')}
         className="w-fit sm:w-60 uppercase"
       >

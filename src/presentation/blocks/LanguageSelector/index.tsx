@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export function LanguageChanger() {
+export function LanguageSelector() {
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
@@ -34,7 +34,7 @@ export function LanguageChanger() {
   };
 
   return (
-    <select onChange={handleChange} value={currentLocale} className='!bg-transparent'>
+    <select onChange={handleChange} value={currentLocale} className='!bg-transparent text-white outline-none'>
       <option value="it">Italian</option>
       <option value="en">English</option>
     </select>

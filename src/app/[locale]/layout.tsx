@@ -7,7 +7,7 @@ import i18nConfig from '../../../i18nConfig';
 import { Space } from '@/presentation/foundations/Space';
 import { Header } from '@/presentation/blocks';
 import { Footer } from '@/presentation/blocks';
-import { spaceUnit } from '@/presentation/foundations/utils';
+import { spaceUnit } from '@/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 

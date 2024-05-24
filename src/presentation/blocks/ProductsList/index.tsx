@@ -4,7 +4,7 @@ import React, { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useResponsive } from '@/hooks/useResponsive';
 import { Box, Row, Grid } from '@/presentation/foundations';
-import { spaceUnit } from '@/presentation/foundations/utils';
+import { spaceUnit } from '@/utils';
 import Image from 'next/image';
 
 export interface ProductsListProps {

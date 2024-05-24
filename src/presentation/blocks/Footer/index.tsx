@@ -3,7 +3,7 @@
 import cx from 'classnames';
 import Image from 'next/image';
 import { Box, Row, Space } from '@/presentation/foundations';
-import { spaceUnit } from '@/presentation/foundations/utils';
+import { spaceUnit } from '@/utils';
 
 export type FooterProps = {
   'data-test-id'?: string;

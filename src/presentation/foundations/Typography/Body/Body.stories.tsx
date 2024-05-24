@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 import { Body } from '.';
-import { DesignLibraryVersion } from '@/utils/constants';
-import { Stack, spaceUnit } from '../..';
+import { DesignLibraryVersion, spaceUnit } from '@/utils';
+import { Stack } from '../..';
 
 export default {
   title: 'Foundations/Typography/Body',

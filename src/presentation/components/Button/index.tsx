@@ -1,7 +1,8 @@
-import { ButtonHTMLAttributes, cloneElement, MouseEventHandler } from 'react';
+import { ButtonHTMLAttributes, cloneElement, MouseEventHandler, useMemo, useState } from 'react';
 import cx from 'classnames';
 import * as classes from './Button.css';
-import { Box, Space, spaceUnit } from '@/presentation/foundations';
+import { Box, Space, TextButton } from '@/presentation/foundations';
+import { spaceUnit } from '@/utils';
 import { IconProps } from '../Icons';
 
 export type ButtonProps = {
@@ -32,12 +33,6 @@ export type ButtonProps = {
    * @required
    */
   size: 'm' | 'l';
-  /**
-   * The variant of the button.
-   * @type keyof typeof classes.variant
-   * @required
-   */
-  variant: keyof typeof classes.variant;
   /**
    * The disabled state of the button.
    * @default false
@@ -89,7 +84,9 @@ export type ButtonProps = {
 };
 
 export function Button(props: ButtonProps) {
-  function convertIconSize(size: ButtonProps['size']) {
+  const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
+
+  const convertIconSize = (size: ButtonProps['size']) => {
     switch (size) {
       case 'm':
         return 's';
@@ -98,7 +95,9 @@ export function Button(props: ButtonProps) {
       default:
         return 's';
     }
-  }
+  };
+
+  const iconColor = useMemo(() => (isMouseOver ? '#000000' : '#FDFAF7'), [isMouseOver]);
 
   return (
     <Box
@@ -111,7 +110,7 @@ export function Button(props: ButtonProps) {
       type={props.type ?? 'button'}
       className={cx(
         'group font-bold rounded-small',
-        classes.variant[props.variant],
+        classes.base,
         {
           [classes.size[props.size]]: typeof props.children === 'string',
           [classes.iconSize[props.size]]: typeof props.children !== 'string',
@@ -127,24 +126,31 @@ export function Button(props: ButtonProps) {
       tabIndex={props.tabIndex}
       grow={props.fullWidth}
       shrink
+      onMouseOver={() => setIsMouseOver(true)}
+      onMouseOut={() => setIsMouseOver(false)}
     >
       {!!props.beforeIcon && (
         <>
           {props.beforeIcon({
             id: 'before-icon-' + props.id,
             size: convertIconSize(props.size),
-            fill: classes.iconColor[props.variant],
+            fill: iconColor,
           })}
           <Space size={spaceUnit} />
         </>
       )}
       {typeof props.children === 'string' ? (
-        <h1>{props.children}</h1>
+        <TextButton
+          size={convertIconSize(props.size)}
+          className="text-white group-hover:text-black group-disabled:text-white"
+        >
+          {props.children}
+        </TextButton>
       ) : (
         cloneElement(props.children, {
           id: 'button-icon-' + props.id,
-          className: cx(classes.iconColor[props.variant], props.children.props.className),
-          fill: classes.iconColor[props.variant],
+          className: cx(props.children.props.className, 'text-white group-hover:text-black group-disabled:text-white'),
+          fill: iconColor,
         })
       )}
       {!!props.afterIcon && (
@@ -153,7 +159,7 @@ export function Button(props: ButtonProps) {
           {props.afterIcon({
             id: 'after-icon-' + props.id,
             size: convertIconSize(props.size),
-            fill: classes.iconColor[props.variant],
+            fill: iconColor,
           })}
         </>
       )}
