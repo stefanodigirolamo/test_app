@@ -18,8 +18,8 @@ export default {
   },
 } as Meta;
 
-export const SizeS = () => <IconPackage size="s" className="fill-base-900" />;
+export const SizeS = () => <IconPackage size="s" className="fill-black" />;
 
-export const SizeM = () => <IconPackage size="m" className="fill-base-900" />;
+export const SizeM = () => <IconPackage size="m" className="fill-black" />;
 
-export const SizeL = () => <IconPackage size="l" className="fill-base-900" />;
+export const SizeL = () => <IconPackage size="l" className="fill-black" />;

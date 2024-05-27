@@ -1,5 +1,5 @@
 export const base =
-  'font-fuerte font-normal text-brand-black cursor-pointer decoration-1 underline-offset-2 underline hover:decoration-2';
+  'font-fuerte font-normal text-brand-black cursor-pointer decoration-2 underline-offset-2 underline decoration-transparent hover:decoration-black';
 
 export const size = {
   m: 'text-link-m-mobile sm:text-link-m-desktop',
