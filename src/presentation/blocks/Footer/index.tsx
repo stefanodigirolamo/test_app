@@ -19,7 +19,7 @@ export function Footer(props: FooterProps) {
     <Row data-test-id={props['data-test-id']} column variant="default">
       <Space size={spaceUnit * 10} />
       <Box
-        className={cx('border-t-[1px] border-neutral-600 py-3 justify-between', props.className)}
+        className={cx('border-t-[2px] border-black py-3 justify-between', props.className)}
         grow
         vAlignContent="center"
       >

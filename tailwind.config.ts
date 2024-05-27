@@ -44,7 +44,7 @@ const theme = {
     neutral: {
       100: '#EDEBE8',
       200: '#D0CCC8',
-      600: '#6B6A69',
+      600: '#A9ABAA',
     },
     interactive: {
       enabled: '#000000',

@@ -6,15 +6,16 @@ import { Button } from '@/presentation/components/Button';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { Heading } from '@/presentation/foundations/Typography';
+import { spaceUnit } from '@/utils';
 
 export function Hp() {
   const router = useRouter();
   const { t } = useTranslation();
 
   return (
-    <Row variant="default" column className="flex" vAlignContent="top">
-      <Heading size="xl" className='text-white'>{t('home.title')}</Heading>
-      <Space size={10} />
+    <Row variant="default" column className="flex" vAlignContent="top" hAlignContent="center">
+      <Heading size="xl" className='font-semibold'>{t('home.title')}</Heading>
+      <Space size={spaceUnit * 5} />
       <Button
         id={'cta'}
         data-test-id={'cta'}

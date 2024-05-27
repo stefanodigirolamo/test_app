@@ -34,7 +34,7 @@ export function LanguageSelector() {
   };
 
   return (
-    <select onChange={handleChange} value={currentLocale} className='!bg-transparent text-white outline-none'>
+    <select onChange={handleChange} value={currentLocale} className='!bg-transparent font-semibold outline-none'>
       <option value="it">Italian</option>
       <option value="en">English</option>
     </select>

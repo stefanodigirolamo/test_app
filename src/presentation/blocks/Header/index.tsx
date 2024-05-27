@@ -32,13 +32,13 @@ function HeaderDefaultDesktop(props: HeaderProps) {
       data-test-id={props['data-test-id'] + '-desktop'}
       component="nav"
       hAlignContent="center"
-      className={cx('bg-black px-1.5 sm:px-0 fixed')}
+      className={cx('bg-neutral-600 px-1.5 sm:px-0 fixed')}
       width="100%"
     >
       <Row
         variant="default"
         vAlignContent="center"
-        className={cx('border-b-[1px] border-neutral-600 py-3 justify-between')}
+        className={cx('border-b-[2px] border-black py-3 justify-between')}
         classNameOuter="w-full"
       >
         <Link data-test-id="header-default-logo-desktop" prefetch={false} href="/" passHref>
@@ -59,11 +59,11 @@ function HeaderDefaultDesktop(props: HeaderProps) {
 
 function HeaderDefaultMobile(props: HeaderProps) {
   return (
-    <Box data-test-id={props['data-test-id'] + '-mobile'} component="nav" className={cx('bg-white fixed')} width="100%">
+    <Box data-test-id={props['data-test-id'] + '-mobile'} component="nav" className={cx('bg-neutral-600 fixed')} width="100%">
       <Row
         variant="default"
         vAlignContent="center"
-        className={cx('border-b-[2px] border-neutral-100 py-1.5 justify-between')}
+        className={cx('border-b-[2px] border-black py-1.5 justify-between')}
         classNameOuter="w-full"
       >
         <Link data-test-id="header-default-logo-mobile" href="/">
