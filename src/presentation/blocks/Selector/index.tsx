@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export function LanguageSelector() {
+export function Selector() {
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();

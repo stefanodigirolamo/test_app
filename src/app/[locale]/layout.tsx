@@ -29,8 +29,7 @@ export default async function RootLayout({
     <html lang={locale} dir={dir(locale)}>
       <body className={cx(inter.className, 'h-screen flex flex-col items-between justify-between')}>
         <Header data-test-id="header" />
-        <Space size={spaceUnit * 10} />
-        {children}
+        <div className='overflow-y-auto'>{children}</div>
         <Footer data-test-id="footer" />
       </body>
     </html>

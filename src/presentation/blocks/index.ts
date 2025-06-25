@@ -1,3 +1,3 @@
 export * from './Footer';
 export * from './Header';
-export * from './LanguageSelector';
+export * from './Selector';

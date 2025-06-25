@@ -1,6 +1,5 @@
 export const base = [
-  'bg-black border-[2px] border-transparent shadow-md',
-  'hover:bg-transparent hover:border-black',
+  'bg-black shadow-lg rounded-md',
   'focus-visible:outline-black focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2',
   'disabled:bg-interactive-disabled disabled:border-interactive-disabled',
 ];

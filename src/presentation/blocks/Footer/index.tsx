@@ -2,8 +2,7 @@
 
 import cx from 'classnames';
 import Image from 'next/image';
-import { Box, Row, Space } from '@/presentation/foundations';
-import { spaceUnit } from '@/utils';
+import { Box, Row } from '@/presentation/foundations';
 
 export type FooterProps = {
   'data-test-id'?: string;
@@ -17,7 +16,6 @@ export type FooterProps = {
 export function Footer(props: FooterProps) {
   return (
     <Row data-test-id={props['data-test-id']} column variant="default">
-      <Space size={spaceUnit * 10} />
       <Box
         className={cx('border-t-[2px] border-black py-3 justify-between', props.className)}
         grow

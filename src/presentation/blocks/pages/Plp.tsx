@@ -4,7 +4,7 @@ import { Row } from '@/presentation/foundations/Row';
 import { Space } from '@/presentation/foundations/Space';
 import { useTranslation } from 'react-i18next';
 import data from '@/data/data.json';
-import { ProductsList } from '../ProductsList';
+import { List } from '../List';
 import { Heading } from '@/presentation/foundations/Typography';
 import { spaceUnit } from '@/utils';
 
@@ -17,7 +17,7 @@ export function Plp() {
       <Heading size="xl" className="font-semibold">
         {t('plp.title')}
       </Heading>
-      <ProductsList list={data} />
+      <List list={data} />
     </Row>
   );
 }

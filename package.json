@@ -16,6 +16,7 @@
     "i18next": "^23.8.2",
     "i18next-resources-to-backend": "^1.2.0",
     "js-cookie": "^3.0.5",
+    "motion": "^12.18.1",
     "next": "14.1.0",
     "next-i18n-router": "^5.3.1",
     "react": "^18",

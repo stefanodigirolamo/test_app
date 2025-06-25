@@ -7,13 +7,13 @@ import { Box, Row, Grid } from '@/presentation/foundations';
 import { spaceUnit } from '@/utils';
 import Image from 'next/image';
 
-export interface ProductsListProps {
+export interface ListProps {
   'data-test-id'?: string;
   list: any[];
   color?: string;
 }
 
-export function ProductsList(props: ProductsListProps) {
+export function List(props: ListProps) {
   const { isSm, isMd } = useResponsive();
   const router = useRouter();
 

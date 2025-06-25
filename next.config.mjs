@@ -2,7 +2,7 @@
 
 const nextConfig = {
   images: {
-    domains: ['via.placeholder.com'],
+    domains: ['dummyjson.com'],
   },
 };
 

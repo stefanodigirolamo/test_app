@@ -4,6 +4,7 @@ import * as classes from './Button.css';
 import { Box, Space, TextButton } from '@/presentation/foundations';
 import { spaceUnit } from '@/utils';
 import { IconProps } from '../Icons';
+import * as motion from 'motion/react-client';
 
 export type ButtonProps = {
   'data-test-id'?: string;
@@ -100,11 +101,10 @@ export function Button(props: ButtonProps) {
   const iconColor = useMemo(() => (isMouseOver ? '#000000' : '#FDFAF7'), [isMouseOver]);
 
   return (
-    <Box
+    <motion.button
       data-test-id={props['data-test-id']}
-      component="button"
-      vAlignContent="center"
-      hAlignContent="center"
+      whileHover={{ scale: 0.95 }}
+      whileTap={{ scale: 0.9 }}
       id={props.id}
       aria-label={props['aria-label']}
       type={props.type ?? 'button'}
@@ -124,8 +124,6 @@ export function Button(props: ButtonProps) {
       onClick={props.action}
       name={props.name}
       tabIndex={props.tabIndex}
-      grow={props.fullWidth}
-      shrink
       onMouseOver={() => setIsMouseOver(true)}
       onMouseOut={() => setIsMouseOver(false)}
     >
@@ -140,16 +138,13 @@ export function Button(props: ButtonProps) {
         </>
       )}
       {typeof props.children === 'string' ? (
-        <TextButton
-          size={convertIconSize(props.size)}
-          className="text-white group-hover:text-black group-disabled:text-white"
-        >
+        <TextButton size={convertIconSize(props.size)} className="text-white group-disabled:text-white">
           {props.children}
         </TextButton>
       ) : (
         cloneElement(props.children, {
           id: 'button-icon-' + props.id,
-          className: cx(props.children.props.className, 'text-white group-hover:text-black group-disabled:text-white'),
+          className: cx(props.children.props.className, 'text-white group-disabled:text-white'),
           fill: iconColor,
         })
       )}
@@ -163,6 +158,6 @@ export function Button(props: ButtonProps) {
           })}
         </>
       )}
-    </Box>
+    </motion.button>
   );
 }
